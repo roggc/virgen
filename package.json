@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpackdev": "webpack --mode development --config ./webpack.config.js",
-    "babelnode": "babel-node -r node_modules/dotenv/config ./server.js",
-    "dev": "npm run webpackdev&& npm run babelnode"
+    "webpackdev": "webpack -w --mode development --config ./webpack.config.js",
+    "nodemon": "nodemon --exec \"babel-node -r node_modules/dotenv/config\" ./server.js",
+    "dev": "npm run webpackdev& npm run nodemon"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
-    "@babel/node": "^7.4.5"
+    "@babel/node": "^7.4.5",
+    "nodemon": "^1.19.0"
   }
 }
