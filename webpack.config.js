@@ -48,7 +48,13 @@ module.exports =
         loaders:
         [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader:'css-loader',
+            options:
+            {
+              modules:true
+            }
+          },
           'sass-loader'
         ]
       },
@@ -70,8 +76,8 @@ module.exports =
     modules:
     [
       "node_modules",
-      path.resolve(__dirname, "./")
+      path.resolve("./")
     ],
-    extensions: ['.js','.css','.scss','.sass','.ico','.png','.webmanifest']
+    extensions: ['.js','.jsx','.css','.scss','.sass','.ico','.png','.webmanifest']
   }
 }
